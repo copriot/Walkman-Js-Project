@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="music-player">
+      <div id="play-list">
+        <i class="bi bi-arrow-bar-down"></i>
+      </div>
+      <img src="assets/selfcontrolpic.jpg" alt=""id="song-image"/>
+      <div class="song-details">
+        <h2 id="song-name">Self-Control</h2>
+        <p id="song-artist">Laura Branigan</p>
+      </div>
+
+      <div class="player-options">
+        <button id="shuffle">
+          <i class="bi bi-shuffle"></i>
+        </button>
+
+        <button id="prev">
+          <i class="bi bi-skip-backward-fill"></i>
+        </button>
+
+        <button id="play">
+          <i class="bi bi-play-fill"></i>
+        </button>
+        <button id="pause" class="hide">
+          <i class="bi bi-pause-fill"></i>
+        </button>
+
+        <button id="next">
+          <i class="bi bi-skip-forward-fill"></i>
+        </button>
+        <button id="repeat">
+          <i class="bi bi-repeat"></i>
+        </button>
+      </div>
+      <audio src="assets/selfControl.mp3"  preload="metadata" id="audio"></audio>
+      <div id="progress-bar">
+        <div id="current-progress"></div>
+      </div>
+      <div class="time-container">
+        <span id="current-time">01.24</span>
+        <span id="max-duration">03.50</span>
+      </div>
+      <div id="playlist-container" class="hide">
+        <button id="close-button">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <ul id="play-list-songs">
+
+        </ul>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
