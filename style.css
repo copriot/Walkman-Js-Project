@@ -132,32 +132,45 @@ body{
         justify-content: space-between;
       }
       #playlist-container{
-        background-color: antiquewhite;
+        background-color: rgb(225, 225, 201);
         position: absolute;
+        width: 90%;
+        height: 90%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 90%;
-        height: 90%;
-
-      }
-      #close-button{
+        box-shadow: 0 0 10px gray;
+        overflow: auto;
+        scroll-behavior: smooth;
+    }
+    
+    
+    #close-button{
         background-color: transparent;
+        border: none;
         height: 2em;
         width: 2em;
         cursor: pointer;
         margin-left: 90%;
         font-size: 20px;
-        
-      }
-      ul{
+    
+    }
+    
+    ul{
         list-style-type: none;
-      }
-      li{
+    }
+    
+    li{
         display: flex;
         align-items: center;
         margin: 1rem 0;
         cursor: pointer;
+    }
+      li img{
+        width: 50px;
+        height: 30px;
+        margin: 10px;
+        border-radius: 15%;
       }
 
       @media (max-width: 560px){
@@ -165,3 +178,6 @@ body{
             font-size: 14px;
         }
       }
+      button.active i{
+        color: blue;
+     }

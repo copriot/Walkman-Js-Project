@@ -25,6 +25,10 @@ let index;
 
 //dongu durumu
 let loop = true;
+
+//karistirma
+shuffle = false
+
 //sarki-listesi
 const songList = [
   {
@@ -157,6 +161,50 @@ const nextSong = () => {
   }
 };
 
+//sarki bittiginde
+audio.onended = () =>{
+    nextSong()
+}
+
+//tekrarlama
+
+repeatButton.addEventListener("click",()=>{
+    if(repeatButton.classList.contains('active')){
+        repeatButton.classList.remove('active')
+        audio.shuffle = false
+        console.log('dongu kapatildi')
+    }
+    else{
+        repeatButton.classList.add('active')
+        audio.shuffle = true
+    }
+    console.log('dongu acildi')
+})
+
+//karistici ac 
+// function shuffleSongs() {
+//     for (let i = songList.length - 1; i > 0; i--) {
+//         let j = Math.floor(Math.random() * (i + 1));
+//         songs[i] = songs[j];
+        
+//     }
+// }
+
+
+shuffleButton.addEventListener('click',()=>{
+    if (shuffleButton.classList.contains('active')) {
+        shuffleButton.classList.remove('active')
+        audio.shuffleSongs = true
+    } else {
+        shuffleButton.classList.add('active')
+        audio.shuffleSongs = false
+    }
+})
+
+
+
+
+
 //sarki listesi ac
 
 playListButton.addEventListener("click", () => {
@@ -178,7 +226,7 @@ const initializePlayList = () => {
         <div class="playlist-song-details">
         <span id=playlist-song-name">
         ${songList[i].name}
-        </span>
+        </span></br>
         <span id="playlist-song-artist-name">
         ${songList[i].artist}
         </span>
