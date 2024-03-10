@@ -26,8 +26,7 @@ let index;
 //dongu durumu
 let loop = true;
 
-//karistirma
-shuffle = false
+
 
 //sarki-listesi
 const songList = [
@@ -171,12 +170,12 @@ audio.onended = () =>{
 repeatButton.addEventListener("click",()=>{
     if(repeatButton.classList.contains('active')){
         repeatButton.classList.remove('active')
-        audio.shuffle = false
+        audio.loop = false
         console.log('dongu kapatildi')
     }
     else{
         repeatButton.classList.add('active')
-        audio.shuffle = true
+        audio.loop = true
     }
     console.log('dongu acildi')
 })
@@ -194,10 +193,10 @@ repeatButton.addEventListener("click",()=>{
 shuffleButton.addEventListener('click',()=>{
     if (shuffleButton.classList.contains('active')) {
         shuffleButton.classList.remove('active')
-        audio.shuffleSongs = true
+        audio.loop = true
     } else {
         shuffleButton.classList.add('active')
-        audio.shuffleSongs = false
+        audio.loop = false
     }
 })
 
